@@ -1,5 +1,16 @@
 #include <stdio.h>
 
+int addten(int x) {
+    return x + 10;
+}   
+
+int foo(){
+    int (*fptr)(int);
+    fptr = &addten; // you do not have to write the ampersand
+    int y = (*fptr)(5);
+    return y;
+}
+
 int main() {
     // Example: Packing and Unpacking RGB values using Bit Masking
 
@@ -23,5 +34,6 @@ int main() {
     printf("Unpacked Green: %d\n", unpacked_green);
     printf("Unpacked Blue: %d\n", unpacked_blue);
 
+    printf("Called foo function", foo());
     return 0;
 }
