@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": ".",
-      "program": "build/Debug/outDebug"
+      "cwd": "/Users/giovannimaya/systems-program/nov13",
+      "program": "/Users/giovannimaya/systems-program/nov13/build/Debug/outDebug"
     }
   ]
 }
