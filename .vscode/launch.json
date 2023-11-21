@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/giovannimaya/systems-program/bits",
-      "program": "/Users/giovannimaya/systems-program/bits/build/Debug/outDebug"
+      "cwd": "/Users/giovannimaya/systems-program/review-problems/linked-lists",
+      "program": "/Users/giovannimaya/systems-program/review-problems/linked-lists/build/Debug/outDebug"
     }
   ]
 }
