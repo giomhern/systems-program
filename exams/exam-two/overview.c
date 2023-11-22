@@ -86,15 +86,6 @@ int main(){
         struct Node *next;
     };
 
-    // Inserting a new node at the head
-    void insertAtHead(struct Node **head, int newData)
-    {
-        struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-        newNode->data = newData;
-        newNode->next = (*head);
-        (*head) = newNode;
-    }
-
     // Multi-dimensional Arrays
     // Declaring a 2D array
     int arr[3][4];
@@ -129,14 +120,14 @@ int main(){
 
     // Bit Packing
     // Packing bits into a single byte
-    unsigned char packedData = (data1 & 0x0F) | (data2 << 4);
+    // unsigned char packedData = (data1 & 0x0F) | (data2 << 4);
 
     // Function Pointers
     // Using function pointers
-    void (*fun_ptr)(int) = &fun;
+    //void (*fun_ptr)(int) = &fun;
 
     // Pthreads
     // Creating a thread
     pthread_t thread;
-    pthread_create(&thread, NULL, threadFunction, NULL);
+    // pthread_create(&thread, NULL, threadFunction, NULL);
 }
