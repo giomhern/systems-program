@@ -142,3 +142,10 @@ void removeDuplicates(struct node* head){
         } else ptr = ptr->next;
     }
 }
+
+void moveNode(struct node **destRef, struct node **sourceRef){
+    struct node* newNode = *sourceRef;
+    (*sourceRef) = newNode->next;
+    newNode->next = *destRef;
+    *destRef = newNode;
+}
