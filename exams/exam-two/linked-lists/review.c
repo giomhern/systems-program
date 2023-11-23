@@ -100,7 +100,6 @@ int main(){
 
     int data = 5;
 
-    head = add_beg(head, data);
     ptr = head;
     while(ptr != NULL){
         printf("%d ", ptr->data);

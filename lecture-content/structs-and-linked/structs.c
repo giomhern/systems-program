@@ -7,9 +7,11 @@ struct point {
 
 
 void foo(){
+    // no need for -> as just using the address
     struct point n;
     n.x = 1.0;
 
+    // pointer differentiates --> use --> to access pointer member value
     struct point* q = (struct point*) malloc(sizeof(struct point));
     (*q).x = 12.0; // this is the same as q->x = 1.0;
 }
