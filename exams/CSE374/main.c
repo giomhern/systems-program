@@ -69,10 +69,11 @@ int count(struct node *head, int searchFor){
 
 int get_nth(struct node* head, int index){
     if(head == NULL) return NULL;
-
-    while(index != 0 && head != NULL){
+    int count = 0;
+    while(head != NULL){
+        if(count == index) return (head->data);
+        count++;
         head = head->next;
-        index--;
     }
     return head->data;
 }
@@ -130,6 +131,14 @@ void frontBackSplit(struct node* source, struct node** frontRef, struct node** b
     *frontRef = source;
     *backRef = slow->next;
     slow->next = NULL;
-    
-    
+}
+
+void removeDuplicates(struct node* head){
+    struct node* ptr = head;
+    while(ptr->next != NULL){
+        if(ptr->next->data == ptr->data){
+            struct node* nextNext = ptr->next->next;
+            ptr->next = nextNext; 
+        } else ptr = ptr->next;
+    }
 }
