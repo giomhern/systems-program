@@ -117,7 +117,7 @@ void append(struct node** aRef, struct node** bRef){
 }
 
 void frontBackSplit(struct node* source, struct node** frontRef, struct node** backRef){
-    struct node* fast = source->next;
+    struct node* fast = source;
     struct node* slow = source;
 
     while(fast != NULL){
@@ -149,3 +149,122 @@ void moveNode(struct node **destRef, struct node **sourceRef){
     newNode->next = *destRef;
     *destRef = newNode;
 }
+
+void alternatingSplit(struct node** source, struct node** aRef, struct node** bRef){
+    // unsigned int count = 0;
+    // while((*source) != NULL{
+    //     if(count % 2 == 0){
+    //         moveNode(aRef, source);
+    //     } else if(count % 3 == 0){
+    //         moveNode(bRef, source);
+    //     }
+    //     (*source) = (*source)->next;
+    // }
+
+    struct node* a = NULL;
+    struct node* b = NULL;
+    struct node* curr = (*source);
+    while(curr != NULL){
+        moveNode(&a, &curr);
+        if(curr != NULL){
+            moveNode(&b, &curr);
+        }
+    } 
+    *aRef = a;
+    *bRef = b;
+}
+
+struct node* shuffleMerge(struct node* a, struct node* b){
+    struct node dummy;
+    struct node* tail = &dummy;
+    dummy.next = NULL;
+}
+
+
+int Count(struct node* head, int searchFor){
+    struct node* curr;
+    int count = 0;
+    for(curr = head; curr != NULL; curr = curr->next){
+        if(curr->data == searchFor){
+            count++;
+        }
+    }
+    return count;
+}
+
+int GetNth(struct node* head, int index){
+    int idx = 0;
+    struct node* curr = head;
+    while(curr != NULL){
+        if(idx == index){
+            return curr->data;
+        }
+        idx++;
+        curr = curr->next;
+    }
+    if(idx != index){
+        fprintf(stderr, "The index is not found within the linked list");
+    }
+}
+
+void DeleteList(struct node* head){
+    if(head == NULL) return;
+    struct node* curr = head;
+    while(curr->next != NULL){
+        struct node* temp = curr;
+        curr = curr->next;
+        free(temp);
+    }
+    free(curr);
+}
+
+int Pop(struct node** headRef){
+    if((*headRef) == NULL) return NULL;
+    struct node* temp = (*headRef);
+    int val = temp->data;
+    (*headRef) = (*headRef)->next;
+    free(temp);
+    return val;
+}
+
+
+void InsertNth(struct node** headRef, int index, int data){
+    // for inserts you want to stop at the node right before so you can make the 
+    // the switch
+    struct node* newNode = malloc(sizeof(struct node));
+    newNode->data = data;
+    newNode->next = NULL;
+    int idx_tracker = 0;
+    if(index == 0){
+        newNode->next = (*headRef);
+    }
+    struct node* curr = (*headRef);
+    while(curr->next != NULL){
+        if(idx_tracker == index){
+            struct node* temp = curr->next;
+            curr->next = newNode;
+            newNode->next = temp;
+        }
+        curr = curr->next;
+        idx_tracker++;
+    }
+}
+
+
+void SortedInsert(struct node** headRef, struct node* newNode){
+    // already sorted in order 
+    // compare with the one ahead, if smaller than one ahead, then thats where it 
+    // goes and then fix the next values for them 
+    // if not keep iterating 
+    if((*headRef) == NULL) return NULL;
+    struct node* curr = (*headRef);
+
+    // 1 4 5 
+    // 4 
+    while(curr->next != NULL && curr->next->data < newNode->data){
+        curr = curr->next;
+    }
+    newNode->next = curr->next;
+    curr->next = newNode;
+}
+

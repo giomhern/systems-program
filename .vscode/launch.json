@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/giovannimaya/systems-program/exams/exam-one",
-      "program": "/Users/giovannimaya/systems-program/exams/exam-one/build/Debug/outDebug"
+      "cwd": "/Users/giovannimaya/systems-program/exams/CSE374",
+      "program": "/Users/giovannimaya/systems-program/exams/CSE374/build/Debug/outDebug"
     }
   ]
 }
