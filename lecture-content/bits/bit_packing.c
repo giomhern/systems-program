@@ -1,4 +1,11 @@
 #include <stdio.h>
+typedef struct intlist intlist;
+
+struct intlist
+{
+    int value;
+    intlist *next;
+};
 
 int addten(int x) {
     return x + 10;
