@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/giovannimaya/systems-program/exams/CSE374",
-      "program": "/Users/giovannimaya/systems-program/exams/CSE374/build/Debug/outDebug"
+      "cwd": "/Users/giovannimaya/systems-program/lecture-content/bits",
+      "program": "/Users/giovannimaya/systems-program/lecture-content/bits/build/Debug/outDebug"
     }
   ]
 }

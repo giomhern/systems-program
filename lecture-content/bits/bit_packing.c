@@ -48,6 +48,14 @@ int main() {
     printf("Unpacked Green: %d\n", unpacked_green);
     printf("Unpacked Blue: %d\n", unpacked_blue);
 
-    printf("Called foo function", foo());
+    int x = 13; // binary is 
+
+    // 13 / 2  Q: 6 R: 1
+    //  6 / 2 Q: 3 R: 0
+    // 3 / 2 Q: 1 R: 1
+    // 1 / 2 Q: 0 R: 1 
+    // 1101 --> 101101
+    // 1101 
+    printf("Ans: %d", x | (4 << 5));
     return 0;
 }
